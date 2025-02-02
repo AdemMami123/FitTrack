@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import  Link  from "next/link";
 import { AnimatedModalDemo } from "@/components/animatedModal";
 
-const Workouts = () => {
+
+const Workouts  = () => {
+ 
   const slideData = [
     {
       title: "Customize your workout plan",

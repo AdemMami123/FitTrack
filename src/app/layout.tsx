@@ -1,11 +1,11 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
-import { ThemeProvider } from "@/components/theme-provider";
-import ClientOnly from "@/components/ClientOnly"; 
-
+import ClientOnly from "@/components/ClientOnly";
+import { Providers } from "./providers"; // Import the Providers component
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,16 +32,11 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ClientOnly>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+          <Providers> {/* Use the Providers component here */}
             <NavBar />
             {children}
             <Footer />
-          </ThemeProvider>
+          </Providers>
         </ClientOnly>
       </body>
     </html>

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Menu } from "lucide-react";
-
+import UserProfile from "@/components/userProfile/UserProfile";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -25,8 +25,8 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import Theme from "..//theme/theme";
-
 import React from "react";
+
 const navigationMenuItems = [
   {
     label: "Workouts",
@@ -80,6 +80,7 @@ const navbar = () => {
             <Link href="/login">Login </Link>
             
           </Button>
+        <UserProfile />
 
           <Theme />
         </div>
