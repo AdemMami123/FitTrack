@@ -2,50 +2,69 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-// Exercise data
+// Bro Split Exercise data
 const exercises = [
   {
-    title: "Push",
-    src: "/assets/push/benchpress.jpg",
-    description: "Chest, Shoulders, Triceps workout routine.",
+    title: "Chest",
+    src: "/assets/workout/chest.jpg",
+    description: "Chest workout routine.",
     exercises: [
       { name: "Bench Press", src: "/assets/workout/bench_press.jpg", sets: "4", reps: "12" },
-      { name: "Shoulder Press", src: "/assets/workout/shoulder_press.jpg", sets: "4", reps: "10" },
-      { name: "Tricep Dips", src: "/assets/workout/tricep_dips.jpg", sets: "3", reps: "15" },
+      { name: "Incline Dumbbell Press", src: "/assets/workout/incline_dumbbell.jpg", sets: "4", reps: "10" },
+      { name: "Chest Flys", src: "/assets/workout/chest_flys.jpg", sets: "3", reps: "12" },
     ],
   },
   {
-    title: "Pull",
-    src: "/assets/pull/latpulldown.jpg",
-    description: "Back, Biceps workout routine.",
+    title: "Back",
+    src: "/assets/workout/back.jpg",
+    description: "Back workout routine.",
     exercises: [
       { name: "Deadlifts", src: "/assets/workout/deadlifts.jpg", sets: "4", reps: "8" },
-      { name: "Pull-ups", src: "/assets/workout/pullups.jpg", sets: "3", reps: "10" },
-      { name: "Bicep Curls", src: "/assets/workout/bicep_curls.jpg", sets: "4", reps: "12" },
-     
+      { name: "Lat Pulldown", src: "/assets/workout/lat_pulldown.jpg", sets: "4", reps: "12" },
+      { name: "Bent-over Rows", src: "/assets/workout/bent_over_rows.jpg", sets: "4", reps: "10" },
     ],
   },
   {
     title: "Legs",
-    src: "/assets/legs/squat.jpg",
+    src: "/assets/workout/legs.jpg",
     description: "Legs and Glutes workout routine.",
     exercises: [
       { name: "Squats", src: "/assets/workout/squats.jpg", sets: "4", reps: "10" },
-      { name: "Lunges", src: "/assets/workout/lunges.jpg", sets: "3", reps: "12" },
       { name: "Leg Press", src: "/assets/workout/leg_press.jpg", sets: "4", reps: "12" },
+      { name: "Calf Raises", src: "/assets/workout/calf_raises.jpg", sets: "3", reps: "15" },
+    ],
+  },
+  {
+    title: "Shoulders",
+    src: "/assets/workout/shoulders.jpg",
+    description: "Shoulder workout routine.",
+    exercises: [
+      { name: "Shoulder Press", src: "/assets/workout/shoulder_press.jpg", sets: "4", reps: "10" },
+      { name: "Lateral Raises", src: "/assets/workout/lateral_raises.jpg", sets: "4", reps: "12" },
+      { name: "Face Pulls", src: "/assets/workout/face_pulls.jpg", sets: "3", reps: "15" },
+    ],
+  },
+  {
+    title: "Arms",
+    src: "/assets/workout/arms.jpg",
+    description: "Biceps and Triceps workout routine.",
+    exercises: [
+      { name: "Bicep Curls", src: "/assets/workout/bicep_curls.jpg", sets: "4", reps: "12" },
+      { name: "Hammer Curls", src: "/assets/workout/hammer_curls.jpg", sets: "4", reps: "10" },
+      { name: "Tricep Dips", src: "/assets/workout/tricep_dips.jpg", sets: "3", reps: "15" },
     ],
   },
 ];
 
-export function ThreeDCardDemo() {
+const BroSplitPage = () => {
   const [selectedExercise, setSelectedExercise] = useState<typeof exercises[number] | null>(null);
 
   return (
-    <div className="min-h-screen w-full flex justify-center items-center p-6">
+    <div className="min-h-screen w-full flex justify-center items-center p-2">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
         {exercises.map((exercise, index) => (
           <Dialog key={index}>
@@ -88,7 +107,7 @@ export function ThreeDCardDemo() {
               <DialogHeader>
                 <DialogTitle>{selectedExercise?.title} Exercises</DialogTitle>
               </DialogHeader>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
                 {selectedExercise?.exercises.map((ex, idx) => (
                   <div key={idx} className="flex flex-col items-center">
                     <Image src={ex.src} height="500" width="500" className="h-40 w-auto object-cover rounded-md" alt={ex.name} />
@@ -104,3 +123,5 @@ export function ThreeDCardDemo() {
     </div>
   );
 }
+
+export default BroSplitPage;

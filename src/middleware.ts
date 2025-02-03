@@ -2,6 +2,7 @@
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import navbar from "./components/navbar/navbar";
 
 export async function middleware(request: NextRequest) {
   // Get the token from the request

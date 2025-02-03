@@ -19,25 +19,25 @@ const Workouts  = () => {
       title: "Push Pull Legs",
       button: "View Program",
       src: "/assets/workout/biceps.jpg",
-      link: "/ppl", // Link for the second button
+      link: "/ppl", 
     },
     {
       title: "Bro Split",
       button: "View Program",
       src: "/assets/workout/deadlift.jpg",
-      link: "/bro-split", // Link for the third button
+      link: "/bro_split", 
     },
     {
       title: "Full Body",
       button: "View Program",
       src: "/assets/workout/squat.jpg",
-      link: "/full-body", // Link for the fourth button
+      link: "/fullbody", 
     },
     {
       title: "Upper Lower Split",
       button: "View Program",
       src: "/assets/workout/failure.jpg",
-      link: "/upper-lower-split", // Link for the fifth button
+      link: "/upperlower", // Link for the fifth button
     },
   ];
   return (
